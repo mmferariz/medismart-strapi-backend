@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_medicamentos_medicamentos",
+  "info": {
+    "displayName": "medicamentos"
+  },
+  "options": {},
+  "attributes": {
+    "medicamentos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medicamento.medicamento"
+    },
+    "cantidad": {
+      "type": "string",
+      "required": true
+    },
+    "instrucciones": {
+      "type": "text",
+      "maxLength": 1500,
+      "default": "-"
+    }
+  }
+}

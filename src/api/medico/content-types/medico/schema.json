@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicos",
+  "info": {
+    "singularName": "medico",
+    "pluralName": "medicos",
+    "displayName": "Medico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 25,
+      "minLength": 3
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true,
+      "maxLength": 25,
+      "minLength": 3
+    },
+    "especialidad": {
+      "type": "string",
+      "default": "-"
+    },
+    "cedula": {
+      "type": "string",
+      "required": true,
+      "minLength": 6,
+      "maxLength": 16
+    },
+    "telefono": {
+      "type": "string",
+      "maxLength": 12
+    },
+    "citas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cita.cita",
+      "mappedBy": "medico"
+    },
+    "recetas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::receta.receta",
+      "mappedBy": "medico"
+    }
+  }
+}
